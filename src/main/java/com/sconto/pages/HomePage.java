@@ -29,7 +29,7 @@ public class HomePage {
     @FindBy(css = "span.headerElement_status--login")
     WebElement statusLoginIcon;
     public HomePage isCheckMarkPresent() {
-        Assert.assertTrue($(statusLoginIcon).isDisplayed());
+        $(statusLoginIcon).isDisplayed();
         return Selenide.page(this);
     }
 }

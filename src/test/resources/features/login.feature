@@ -8,7 +8,7 @@ Feature: Login
     And User clicks on Anmelden button
     #And User click on User icon
     #Then User verifies his name
-  #Then User verifies login by check mark on login icon
+  Then User verifies login by check mark on login icon
   @wrongEmail
   Scenario Outline: Unsuccessful login with wrong email
     Given User is on HomePage
@@ -20,7 +20,7 @@ Feature: Login
     Then User verifies Error message
     Examples:
       |email|password|
-      |ks@gmail.com|Aa12345!|
-      |ks@gmail.com|Aa12345!|
+      |k@gmail.com|Aa12345!|
+      |k111@gmail.com|Aa12345!|
 
 

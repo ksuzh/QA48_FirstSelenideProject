@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
@@ -47,10 +48,12 @@ public class LoginPage {
         return Selenide.page(this);
     }
 
-    @FindBy(id = "loginEmail-error")
+    @FindBy(xpath = "//label[@id='loginEmail-error']")
     WebElement emailFieldError;
     public LoginPage isErrorMessageDisplayed() {
-        Assert.assertTrue(emailFieldError.isDisplayed());
+        $(emailFieldError).shouldBe(visible);
+       // Assert.assertTrue(emailFieldError.isDisplayed());
         return Selenide.page(this);
     }
+
 }
